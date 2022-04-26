@@ -512,10 +512,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 3rem;
   height: 100vh;
   width: 100%;
+  --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-right: 1rem;
   padding-left: 5rem;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link{
@@ -523,8 +532,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -586,7 +595,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .nav-menu.show{
-  --tw-translate-y: 0px;
+  --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -602,3 +611,130 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 /* End Toggle Menu */
+
+/* Hero Section */
+
+.hero-wrapper{
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.hero-left{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-greet{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.hero-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* End Hero Section */
+
+/* Content Section */
+
+.content-section{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card-sm{
+  width: 100%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.card-body{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.img-wrapper{
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kepsek-img{
+  width: 75%;
+}
+
+.sambutan-title, .sambutan-sub{
+  text-align: center;
+  font-weight: 600;
+}
+
+.sambutan-sub{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.sambutan-desc{
+  overflow-wrap: break-word;
+  padding-top: 1rem;
+  text-align: justify;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* End Content Section */
+
+/* Footer */
+
+.footer{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.creator{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.creator:hover{
+  --tw-text-opacity: 1;
+  color: rgb(0 153 255 / var(--tw-text-opacity));
+}
+
+/* End Footer */
+
+.w-4\/5{
+  width: 80%;
+}
+
+.text-\[\#0099ff\]{
+  --tw-text-opacity: 1;
+  color: rgb(0 153 255 / var(--tw-text-opacity));
+}
