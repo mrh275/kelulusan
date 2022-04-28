@@ -498,6 +498,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@media (min-width: 1024px){
+  .navbar{
+    position: static;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+.navbar.fixed-nav{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .brand-item{
@@ -516,8 +536,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   padding-right: 1rem;
   padding-left: 5rem;
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -525,6 +545,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1024px){
+  .nav-menu{
+    position: static;
+    left: auto;
+    top: auto;
+    display: flex;
+    height: auto;
+    width: auto;
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    padding-left: 0px;
+  }
 }
 
 .nav-link{
@@ -618,28 +652,94 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
-  justify-content: center;
+  justify-content: space-between;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 2.5rem;
+  padding-top: 5rem;
   padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px){
+  .hero-wrapper{
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px){
+  .hero-wrapper{
+    padding-top: 1rem;
+  }
+
+  .hero-wrapper.fixed-nav{
+    padding-top: 5rem;
+  }
 }
 
 .hero-left{
   display: flex;
+  align-items: center;
   justify-content: flex-start;
 }
 
+@media (min-width: 768px){
+  .hero-left{
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px){
+  .hero-left{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 .hero-greet{
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
+}
+
+@media (min-width: 640px){
+  .hero-greet{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .hero-greet{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 .hero-right{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 768px){
+  .hero-right{
+    width: 50%;
+  }
+}
+
+.hero-img{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .hero-img{
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px){
+  .hero-img{
+    width: 100%;
+  }
 }
 
 /* End Hero Section */
@@ -672,20 +772,70 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 1.5rem;
 }
 
+@media (min-width: 1024px){
+  .card-body{
+    display: flex;
+  }
+}
+
 .img-wrapper{
   margin-bottom: 1.5rem;
   display: flex;
+  width: auto;
   align-items: center;
   justify-content: center;
 }
 
+@media (min-width: 1024px){
+  .img-wrapper{
+    width: 16.666667%;
+  }
+}
+
 .kepsek-img{
+  margin-top: -2rem;
   width: 75%;
+}
+
+@media (min-width: 640px){
+  .kepsek-img{
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px){
+  .kepsek-img{
+    margin-top: -2rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .kepsek-img{
+    width: 100%;
+  }
+}
+
+.sambutan{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px){
+  .sambutan{
+    width: 83.333333%;
+  }
 }
 
 .sambutan-title, .sambutan-sub{
   text-align: center;
   font-weight: 600;
+}
+
+@media (min-width: 1024px){
+  .sambutan-title{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .sambutan-sub{
@@ -699,6 +849,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: justify;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+@media (min-width: 1280px){
+  .sambutan-desc{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 /* End Content Section */
@@ -729,10 +886,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 /* End Footer */
-
-.w-4\/5{
-  width: 80%;
-}
 
 .text-\[\#0099ff\]{
   --tw-text-opacity: 1;

@@ -17,7 +17,11 @@
 
   /* Navbar */
   .navbar {
-    @apply bg-gray-800 px-4 text-white w-full flex justify-between items-center fixed py-3;
+    @apply bg-gray-800 px-4 text-white w-full flex justify-between items-center fixed lg:static py-3 lg:py-0 transition-all duration-300;
+  }
+
+  .navbar.fixed-nav {
+    @apply fixed w-full top-0 shadow-lg;
   }
 
   .brand-item {
@@ -25,7 +29,7 @@
   }
 
   .nav-menu {
-    @apply absolute w-full h-screen bg-gray-800 -left-20 top-12 py-4 pr-4 pl-20 -translate-x-full transition ease-in-out duration-300;
+    @apply absolute lg:flex lg:static w-full lg:w-auto h-screen lg:h-auto bg-gray-800 -left-20 lg:left-auto top-12 lg:top-auto py-3 pr-4 pl-20 lg:pl-0 -translate-x-full lg:translate-x-0 transition ease-in-out duration-300;
   }
 
   .nav-link {
@@ -60,16 +64,23 @@
 
   /* Hero Section */
   .hero-wrapper {
-    @apply flex flex-col-reverse justify-center w-full px-8 pt-10 pb-6;
+    @apply flex flex-col-reverse md:flex-row justify-between w-full px-8 pt-20 lg:pt-4 pb-6;
+  }
+  .hero-wrapper.fixed-nav {
+    @apply lg:pt-20;
   }
   .hero-left {
-    @apply flex justify-start;
+    @apply flex justify-start lg:px-8 items-center md:w-1/2;
   }
   .hero-greet {
-    @apply text-lg font-semibold;
+    @apply text-xl sm:text-3xl lg:text-4xl font-semibold;
   }
   .hero-right {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center md:w-1/2;
+  }
+
+  .hero-img {
+    @apply w-full sm:w-3/4 lg:w-full;
   }
   /* End Hero Section */
 
@@ -82,15 +93,19 @@
   }
 
   .card-body {
-    @apply px-6 py-6;
+    @apply px-6 py-6 lg:flex;
   }
 
   .img-wrapper {
-    @apply flex justify-center items-center mb-6;
+    @apply flex justify-center w-auto items-center mb-6 lg:w-1/6;
   }
 
   .kepsek-img {
-    @apply w-3/4;
+    @apply w-3/4 sm:w-2/4 lg:w-full -mt-8 md:-mt-8;
+  }
+
+  .sambutan {
+    @apply lg:w-5/6 px-4;
   }
 
   .sambutan-title,
@@ -98,12 +113,16 @@
     @apply text-center font-semibold;
   }
 
+  .sambutan-title {
+    @apply lg:text-lg;
+  }
+
   .sambutan-sub {
     @apply text-sm;
   }
 
   .sambutan-desc {
-    @apply pt-4 text-justify text-sm break-words;
+    @apply pt-4 text-justify text-sm xl:text-base break-words;
   }
   /* End Content Section */
 
