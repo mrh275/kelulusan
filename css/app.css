@@ -4,6 +4,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* html {
+  scroll-behavior: smooth;
+} */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,8 +92,9 @@
   .content-section {
     @apply bg-gray-200 px-8 py-8;
   }
+
   .card-sm {
-    @apply w-full bg-gray-50 rounded-lg shadow-lg my-8;
+    @apply w-full bg-gray-50 rounded-lg shadow-lg mt-8 mb-2;
   }
 
   .card-body {
@@ -128,12 +133,40 @@
   /* End Sambutan */
 
   /* Pengumuman Kelulusan */
+  /* Alert Kelulusan */
+  .card {
+    @apply w-full rounded-lg shadow-lg mt-8 mb-2 px-6 py-4;
+  }
+
+  .card-success {
+    @apply bg-green-200;
+  }
+
+  .lulus-title {
+    @apply text-green-700 text-lg;
+  }
+
+  .lulus-desc {
+    @apply text-justify text-sm xl:text-base break-words text-green-700 my-2;
+  }
+
+  .lulus-btn {
+    @apply flex justify-start flex-wrap flex-col;
+  }
+  /* End Alert Kelulusan */
   .pengumuman-title {
     @apply text-center font-semibold md:text-lg lg:text-xl w-full;
   }
 
   .pengumuman-desc {
     @apply w-full text-center my-4;
+  }
+
+  .graduation-sub {
+    @apply font-semibold text-lg lg:text-2xl mb-4;
+  }
+  .pengumuman-list {
+    @apply list-decimal pl-6 mb-4;
   }
 
   .btn {
@@ -151,12 +184,76 @@
   .content-section.pengumuman.fixed-nav {
     @apply lg:pt-20;
   }
+
+  .graduation-title {
+    @apply mt-12 lg:mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold;
+  }
+
+  .form-kelulusan {
+    @apply w-full;
+  }
+
+  .form-group {
+    @apply flex flex-col items-start justify-center mb-4;
+  }
+
+  .form-group label {
+    @apply font-semibold;
+  }
+
+  .form-control {
+    @apply border border-gray-400 rounded-md px-2 py-1 w-full outline-none focus:ring focus:ring-blue-500 transition-all duration-300 ease-in-out;
+  }
+
+  .form-control option {
+    @apply bg-gray-200;
+  }
+  .hasil-pengumuman {
+    @apply hidden;
+  }
+
+  .hasil-pengumuman.show {
+    @apply block;
+  }
+
+  .btn-sm {
+    @apply py-1.5 px-3 rounded-md transition-all duration-200 ease-in-out mx-2 my-2;
+  }
+
+  .btn-success {
+    @apply bg-green-500 text-white hover:bg-green-600;
+  }
+
+  .keterangan-title {
+    @apply font-semibold text-lg lg:text-xl mb-4;
+  }
+
+  .keterangan-list {
+    @apply list-disc pl-6;
+  }
   /* End Pengumuman Kelulusan */
   /* End Content Section */
 
   /* Footer */
   .footer {
     @apply bg-gray-800 px-4 py-4 text-white text-center;
+  }
+
+  .footer-wrapper {
+    @apply lg:flex lg:justify-between;
+  }
+
+  .footer-left,
+  .footer-right {
+    @apply lg:w-1/2;
+  }
+
+  .footer-left {
+    @apply lg:text-left;
+  }
+
+  .footer-right {
+    @apply lg:text-right;
   }
 
   .creator {
