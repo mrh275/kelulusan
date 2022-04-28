@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Graduation Announcement | SMA Negeri 1 Rawamerta</title>
     <link rel="stylesheet" href="./dist/css/app.css" />
+    <link rel="stylesheet" href="./format/format.css" />
   </head>
   <body>
     <!-- Main Wrapper -->
@@ -34,28 +35,60 @@
 
       <!-- Content Section -->
       <div class="content-section pengumuman">
-        <div class="card-sm">
-          <div class="card-body">
-            <div class="img-wrapper">
-              <img src="./assets/img/kepsek.png" alt="Profile Kepsek" class="kepsek-img" />
-            </div>
-
-            <div class="sambutan">
-              <h3 class="sambutan-title">Epul Saepul, S.Pd.I., M.Pd.</h3>
-              <p class="sambutan-sub">Kepala SMA Negeri 1 Rawamerta</p>
-              <p class="sambutan-desc">
-                Saya selaku Kepala Sekolah mewakili jajaran Civitas Akademik SMA Negeri 1 Rawamerta, mengucapkan <strong>Selamat!</strong> kepada seluruh siswa-siswi kelas 12 yang telah lulus dari SMA Negeri 1 Rawamerta. Semoga selama 3 tahun kalian
-                di sekolah ini menjadi bekal untuk kalian menghadapi tantangan di dunia luar.
-              </p>
-              <p class="sambutan-desc">Untuk anak-anak kami yang melanjutkan ke Perguruan Tinggi dan Bekerja, semoga kalian diberikan kesehatan, keselamatan dan dapat membanggakan orang tua kalian kelak.</p>
+        <h2 class="graduation-title">Pengumuman Kelulusan</h2>
+        <div class="card card-success hasil-pengumuman">
+          <div class="card-header">
+            <h3 class="lulus-title"><strong>Selamat!</strong> <strong class="nama-siswa1"></strong> Anda <strong>Lulus</strong>.</h3>
+            <p class="lulus-desc">Ananda <strong class="nama-siswa2"></strong> telah menyelesaikan Pendidikan selama 3 tahun di <strong>SMA Negeri 1 Rawamerta</strong>. Dan dinyatakan telah <strong>Lulus</strong> dari SMA Negeri 1 Rawamerta.</p>
+            <p class="lulus-desc">Untuk mengunduh <strong>Dokumen Keterangan Lulus</strong>, silahkan klik tombol dibawah ini.</p>
+            <div class="lulus-btn">
+              <button class="btn-sm btn-success skl">Suket Lulus</button>
+              <button class="btn-sm btn-success transkrip">Transkrip Nilai</button>
+              <button class="btn-sm btn-success suket-ijazah">Suket Ijazah</button>
+              <button class="btn-sm btn-success skkb">SKKB</button>
             </div>
           </div>
         </div>
         <div class="card-sm">
           <div class="card-body">
-            <h3 class="pengumuman-title">Pengumuman Kelulusan</h3>
-            <p class="pengumuman-desc">Untuk mengakses hasil pengumuman kelulusan, silahkan klik tombol dibawah ini.</p>
-            <a href="./pengumuman.html" class="btn btn-primary">Pengumuman</a>
+            <form class="form-kelulusan" method="POST">
+              <div class="form-group">
+                <label for="nisn">NISN</label>
+                <input type="text" name="nisn" id="nisn" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="angkatan">Tahun Lulus</label>
+                <select name="angkatan" id="angkatan" class="form-control">
+                  <option value="">Pilih :</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="token">Token</label>
+                <input type="text" class="form-control" name="token" />
+              </div>
+              <div class="form-group">
+                <button class="btn-sm btn-primary" type="button" onclick="cekKelulusn()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card-sm">
+          <div class="card-body flex-col">
+            <h3 class="graduation-sub">Cara Cek Pengumuman Kelulusan</h3>
+            <ol class="pengumuman-list">
+              <li>Masukan NISN</li>
+              <li>Pilih tahun lulus/angkatan</li>
+              <li>Masukan Token</li>
+              <li>Klik tombol <strong>Submit</strong></li>
+            </ol>
+            <h4 class="keterangan-title">Keterangan :</h4>
+            <ul class="keterangan-list">
+              <li>Untuk mengetahui NISN dan Token silahkan hubungi Wali Kelas masing-masing.</li>
+              <li>Token bersifat rahasia dan hanya akan diberikan kepada lulusan yang bersangkutan.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -74,6 +107,519 @@
     </div>
     <!-- End Main Wrapper -->
 
+    <div class="hidden absolute">
+      <!-- Surat Keterangan Lulus -->
+      <div class="skl-wrapper w-2/3 mx-auto">
+        <div class="kelulusan" id="kelulusan">
+          <div class="wrapper bg-white p-8 relative">
+            <img src="./format/img/logo-sekolah.png" alt="watermark" class="absolute left-[9rem] top-[15rem] w-[480px] opacity-10" />
+            <div class="header flex justify-start items-center border-b-2 border-double border-gray-800 relative z-50">
+              <div class="logo flex items-center">
+                <img src="./format/img/logo-jabar.png" class="w-[100px] absolute top-4" alt="logo" />
+              </div>
+              <div class="title text-center w-full font-bold text-xl">
+                <h1>PEMERINTAH DAERAH PROVINSI JAWA BARAT</h1>
+                <h2>DINAS PENDIDIKAN</h2>
+                <h3>CABANG DINAS PENDIDIKAN WILAYAH IV</h3>
+                <h4 class="text-2xl">SMA NEGERI 1 RAWAMERTA</h4>
+                <p class="font-normal text-base">Jl. Garunggung - Panyingkiran Kec. Rawamerta Kab. Karawang, 41382</p>
+                <p class="font-normal text-base">Email : sman1rwt@gmail.com Website : https://sman1rawamerta.sch.id</p>
+              </div>
+            </div>
+            <div class="title w-full flex justify-center items-center flex-col my-8 relative z-50">
+              <h2 class="text-xl font-bold border-b-2 border-gray-800">PENGUMUMAN KELULUSAN</h2>
+              <h3 class="letter-number">Nomor : 421.3/0137/SMAN1RWT/CDP.WIL.IV/2022</h3>
+            </div>
+            <div class="body-wrapper mx-[2cm] relative z-50">
+              <p class="text-justify">Kepala SMA Negeri 1 Rawamerta Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran 2021/2022 berdasarkan :</p>
+              <ol class="list-decimal ml-4 mt-4">
+                <li class="text-justify">Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013;</li>
+                <li class="text-justify">Kriteria kelulusan dari satuan pendidikan sesuai dengan Kurikulum Tingkat Satuan Pendidikan dan peraturan perundang-undangan serta;</li>
+                <li class="text-justify">Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 28 April 2022;</li>
+              </ol>
+              <p>menerangkan bahwa :</p>
+              <div class="data my-4 mx-8">
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Nama</div>
+                  <div class="data-value">: <span class="font-bold nama"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Tempat, tanggal lahir</div>
+                  <div class="data-value">: <span class="tempat_lahir"></span>, <span class="tanggal_lahir"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">NIS / NISN</div>
+                  <div class="data-value">: <span class="nis"></span> / <span class="nisn"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Peminatan</div>
+                  <div class="data-value">: <span class="jurusan"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Dinyatakan</div>
+                  <div class="data-value">: <span class="font-bold text-xl">LULUS</span></div>
+                </div>
+              </div>
+              <p class="text-justify">Demikian pengumuman ini dibuat untuk diketahui sebagaimana mestinya.</p>
+
+              <div class="ttd-wrapper w-full flex justify-end my-8 relative z-50">
+                <div class="ttd relative">
+                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p class="mb-20">Kepala Sekolah,</p>
+                  <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
+                  <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 top-0" />
+                  <p class="font-bold border-b-2 border-gray-800">EPUL SAEPUL, S.Pd.I., M.Pd.</p>
+                  <p>NIP. 19820213 201001 1 003</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Surat Keterangan Lulus -->
+
+      <!-- Surat Keterangan Ijazah -->
+      <div class="skl-wrapper w-2/3 mx-auto">
+        <div class="suket-ijazah" id="suket-ijazah">
+          <div class="wrapper bg-white p-8 relative">
+            <img src="./format/img/logo-sekolah.png" alt="watermark" class="absolute left-[9rem] top-[15rem] w-[480px] opacity-10" />
+            <div class="header flex justify-start items-center border-b-2 border-double border-gray-800 relative z-50">
+              <div class="logo flex items-center">
+                <img src="./format/img/logo-jabar.png" class="w-[100px] absolute top-4" alt="logo" />
+              </div>
+              <div class="title text-center w-full font-bold text-xl">
+                <h1>PEMERINTAH DAERAH PROVINSI JAWA BARAT</h1>
+                <h2>DINAS PENDIDIKAN</h2>
+                <h3>CABANG DINAS PENDIDIKAN WILAYAH IV</h3>
+                <h4 class="text-2xl">SMA NEGERI 1 RAWAMERTA</h4>
+                <p class="font-normal text-base">Jl. Garunggung - Panyingkiran Kec. Rawamerta Kab. Karawang, 41382</p>
+                <p class="font-normal text-base">Email : sman1rwt@gmail.com Website : https://sman1rawamerta.sch.id</p>
+              </div>
+            </div>
+            <div class="title w-full flex justify-center items-center flex-col my-8 relative z-50">
+              <h2 class="text-xl font-bold border-b-2 border-gray-800">SURAT KETERANGAN IJAZAH</h2>
+              <h3 class="letter-number">Nomor : 421.3/0139/SMAN1RWT/CDP.WIL.IV/2022</h3>
+            </div>
+            <div class="body-wrapper mx-[2cm] relative z-50">
+              <p class="text-justify">Yang bertanda tangan di bawah ini, Kepala Sekolah Menengah Atas (SMA) Negeri 1 Rawamerta Kab. Karawang, menerangkan bahwa :</p>
+              <div class="data my-4 mx-8">
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Nama</div>
+                  <div class="data-value">: <span class="font-bold suket-ijazah-nama"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">NIS / NISN</div>
+                  <div class="data-value">: <span class="suket-ijazah-nis"></span> / <span class="suket-ijazah-nisn"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Tempat, tanggal lahir</div>
+                  <div class="data-value">: <span class="suket-ijazah-tempatLahir"></span>, <span class="suket-ijazah-tanggalLahir"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Jenis Kelamin</div>
+                  <div class="data-value">: <span class="suket-ijazah-jenisKelamin"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Agama</div>
+                  <div class="data-value">: <span class="suket-ijazah-agama"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">No. Peserta Ujian</div>
+                  <div class="data-value">: <span class="suket-ijazah-nopes"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Kelas</div>
+                  <div class="data-value">: <span class="suket-ijazah-kelas"></span></div>
+                </div>
+              </div>
+              <p class="text-justify mb-2">telah melaksanakan Ujian Sekolah (US) 14 - 21 Maret 2022 dan <strong>Ijazah/STTB</strong> masih dalam proses.</p>
+              <p class="text-justify">Demikian Surat Keterangan ini, kami buat agar dapat dipergunakan sebagaimana mestinya.</p>
+
+              <div class="ttd-wrapper w-full flex justify-end my-8 relative z-50">
+                <div class="ttd relative">
+                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p class="mb-20">Kepala Sekolah,</p>
+                  <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
+                  <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 top-0" />
+                  <p class="font-bold border-b-2 border-gray-800">EPUL SAEPUL, S.Pd.I., M.Pd.</p>
+                  <p>NIP. 19820213 201001 1 003</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Surat Keterangan Ijazah -->
+
+      <!-- Transkrip Nilai -->
+      <div class="skl-wrapper w-2/3 mx-auto">
+        <div class="transkrip-nilai" id="transkrip-nilai">
+          <div class="wrapper bg-white py-6 px-6 relative">
+            <img src="./format/img/logo-sekolah.png" alt="watermark" class="absolute left-[10rem] top-[25rem] w-[480px] opacity-10" />
+            <div class="header flex justify-start items-center w-11/12 mx-auto border-b-2 border-double border-gray-800 relative z-50">
+              <div class="logo flex items-center">
+                <img src="./format/img/logo-jabar.png" class="w-[90px] absolute top-0" alt="logo" />
+              </div>
+              <div class="title text-center w-full font-bold text-base leading-5">
+                <h1>PEMERINTAH DAERAH PROVINSI JAWA BARAT</h1>
+                <h2>DINAS PENDIDIKAN</h2>
+                <h3>CABANG DINAS PENDIDIKAN WILAYAH IV</h3>
+                <h4 class="text-lg">SMA NEGERI 1 RAWAMERTA</h4>
+                <p class="font-normal text-[12px] leading-[12px]">Jl. Garunggung - Panyingkiran Kec. Rawamerta Kab. Karawang, 41382</p>
+                <p class="font-normal text-[12px]">Email : sman1rwt@gmail.com Website : https://sman1rawamerta.sch.id</p>
+              </div>
+            </div>
+            <div class="title w-full flex justify-center items-center flex-col my-2 relative z-50">
+              <h2 class="text-base font-bold border-b-2 border-gray-800">SURAT KETERANGAN LULUS</h2>
+              <h3 class="letter-number text-[14px] leading-[16px]">Nomor : 421.3/0138/SMAN1RWT/CDP.WIL.IV/2022</h3>
+            </div>
+            <div class="body-wrapper mx-[2cm] pt-2 relative z-50 text-[14px]">
+              <p class="text-justify">Kepala SMA Negeri 1 Rawamerta Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran 2021/2022 berdasarkan :</p>
+              <ol class="list-decimal ml-4 m-2">
+                <li class="text-justify">Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013;</li>
+                <li class="text-justify">Kriteria kelulusan dari satuan pendidikan sesuai dengan Kurikulum Tingkat Satuan Pendidikan dan peraturan perundang-undangan serta;</li>
+                <li class="text-justify">Rapat Pleno Dewan Guru tentang Kelulusan pada tanggal 28 April 2022;</li>
+              </ol>
+              <p class="my-2">menerangkan bahwa :</p>
+              <div class="data my-2 mx-5 text-[14px]">
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Nama</div>
+                  <div class="data-value">: <span class="font-bold transkrip-nama">AISAH</span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Tempat dan Tanggal Lahir</div>
+                  <div class="data-value">: <span class="transkrip-tempatLahir"></span>, <span class="transkrip-tanggalLahir"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Nama Orang Tua</div>
+                  <div class="data-value">: <span class="transkrip-namaOrangTua"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Nomor Induk Siswa</div>
+                  <div class="data-value">: <span class="transkrip-nis"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Nomor Induk Siswa Nasional</div>
+                  <div class="data-value">: <span class="transkrip-nisn"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Peminatan/Kompetensi Keahlian</div>
+                  <div class="data-value">: <span class="transkrip-jurusan"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-5/12">Dinyatakan</div>
+                  <div class="data-value">: <span class="font-bold">L U L U S</span></div>
+                </div>
+              </div>
+              <p>dengan nilai sebagati berikut:</p>
+
+              <table class="table-nilai my-2">
+                <tr class="font-bold text-center">
+                  <td class="px-4">No</td>
+                  <td>
+                    <span>Mata Pelajaran</span><br />
+                    <span>(Kurikulum 2013)</span>
+                  </td>
+                  <td class="w-[120px] px-4">
+                    <span>Nilai Ujian Sekolah</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="kelompok-mapel">Kelompok A / Muatan Nasional</td>
+                </tr>
+                <tr>
+                  <td class="number-list">1.</td>
+                  <td class="mapel">Pendidikan Agama dan Budi Pekerti</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">2.</td>
+                  <td class="mapel">Pendidikan Pancasila dan Kewarganegaraan</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">3.</td>
+                  <td class="mapel">Bahasa Indonesia</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">4.</td>
+                  <td class="mapel">Matematika</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">5.</td>
+                  <td class="mapel">Sejarah Indonesia</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">6.</td>
+                  <td class="mapel">Bahasa Inggris</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="kelompok-mapel">Kelompok B / Muatan Kewilayahan</td>
+                </tr>
+                <tr>
+                  <td class="number-list">1.</td>
+                  <td class="mapel">Seni Budaya</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">2.</td>
+                  <td class="mapel">Pendidikan Jasmani, Olahraga dan Kesehatan</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">3.</td>
+                  <td class="mapel">Prakarya dan Kewirausahaan</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">4.</td>
+                  <td class="mapel">Bahasa Sunda</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="kelompok-mapel">Kelompok C / Muatan Peminatan Kejuaran</td>
+                </tr>
+                <tr>
+                  <td class="number-list">1.</td>
+                  <td class="mapel">Matematika</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">2.</td>
+                  <td class="mapel">Biologi</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">3.</td>
+                  <td class="mapel">Fisima</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">4.</td>
+                  <td class="mapel">Kimia</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td class="number-list">5.</td>
+                  <td class="mapel">Ekonomi</td>
+                  <td class="nilai">83,25</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-center">Rata-rata</td>
+                  <td class="font-bold text-center">83.80</td>
+                </tr>
+              </table>
+
+              <div class="ttd-wrapper w-full flex justify-end my-2 relative z-50">
+                <div class="ttd relative">
+                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p class="mb-[70px]">Kepala Sekolah,</p>
+                  <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
+                  <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 -top-3" />
+                  <p class="font-bold border-b-2 border-gray-800">EPUL SAEPUL, S.Pd.I., M.Pd.</p>
+                  <p>NIP. 19820213 201001 1 003</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Transkrip Nilai -->
+
+      <!-- SKKB -->
+      <div class="skl-wrapper w-2/3 mx-auto">
+        <div class="skkb" id="skkb">
+          <div class="wrapper bg-white p-8 relative">
+            <img src="./format/img/logo-sekolah.png" alt="watermark" class="absolute left-[9rem] top-[15rem] w-[480px] opacity-10" />
+            <div class="header flex justify-start items-center border-b-2 border-double border-gray-800 relative z-50">
+              <div class="logo flex items-center">
+                <img src="./format/img/logo-jabar.png" class="w-[100px] absolute top-4" alt="logo" />
+              </div>
+              <div class="title text-center w-full font-bold text-xl">
+                <h1>PEMERINTAH DAERAH PROVINSI JAWA BARAT</h1>
+                <h2>DINAS PENDIDIKAN</h2>
+                <h3>CABANG DINAS PENDIDIKAN WILAYAH IV</h3>
+                <h4 class="text-2xl">SMA NEGERI 1 RAWAMERTA</h4>
+                <p class="font-normal text-base">Jl. Garunggung - Panyingkiran Kec. Rawamerta Kab. Karawang, 41382</p>
+                <p class="font-normal text-base">Email : sman1rwt@gmail.com Website : https://sman1rawamerta.sch.id</p>
+              </div>
+            </div>
+            <div class="title w-full flex justify-center items-center flex-col my-8 relative z-50">
+              <h2 class="text-xl font-bold border-b-2 border-gray-800">SURAT KETERANGAN KELAKUAN BAIK</h2>
+              <h3 class="letter-number">Nomor : 421.3/0140/SMAN1RWT/CDP.WIL.IV/2022</h3>
+            </div>
+            <div class="body-wrapper mx-[2cm] relative z-50">
+              <p class="text-justify">Yang bertanda tangan di bawah ini, Kepala Sekolah Menengah Atas (SMA) Negeri 1 Rawamerta Kab. Karawang, menerangkan bahwa :</p>
+              <div class="data my-4 mx-8">
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Nama</div>
+                  <div class="data-value">: <span class="font-bold skkb-nama">AISAH</span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">NIS / NISN</div>
+                  <div class="data-value">: <span class="skkb-nis"></span> / <span class="skkb-nisn"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Tempat, tanggal lahir</div>
+                  <div class="data-value">: <span class="skkb-tempatLahir"></span>, <span class="skkb-tanggalLahir"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Jenis Kelamin</div>
+                  <div class="data-value">: <span class="skkb-jenisKelamin"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Agama</div>
+                  <div class="data-value">: <span class="skkb-agama"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">No. Peserta Ujian</div>
+                  <div class="data-value">: <span class="skkb-nopes"></span></div>
+                </div>
+                <div class="data-group flex">
+                  <div class="data-label w-2/6">Kelas</div>
+                  <div class="data-value">: <span class="skkb-kelas"></span></div>
+                </div>
+              </div>
+              <p class="text-justify">telah melaksanakan Ujian Sekolah (US) Tahun Pelajaran 2021/2022 dan berdasarkan penilaian selama menjadi siswa di SMA Negeri 1 Rawamerta Kab. Karawang, yang bersangkutan</p>
+              <p class="text-center my-4 italic font-bold">"Berkelakuan baik dan tidak pernah terlibat kenakalan remaja/Narkoba."</p>
+              <p class="text-justify">Demikian Surat Keterangan ini, kami buat agar dapat dipergunakan sebagaimana mestinya.</p>
+
+              <div class="ttd-wrapper w-full flex justify-between my-8 relative z-50">
+                <div class="pas-foto flex justify-end items-center w-1/2">
+                  <img src="./format/img/no-profile.png" alt="foto" class="w-[3cm] h-[4cm]" />
+                </div>
+                <div class="ttd relative">
+                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p class="mb-20">Kepala Sekolah,</p>
+                  <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
+                  <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 top-0" />
+                  <p class="font-bold border-b-2 border-gray-800">EPUL SAEPUL, S.Pd.I., M.Pd.</p>
+                  <p>NIP. 19820213 201001 1 003</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End SKKB -->
+    </div>
+
     <script src="./dist/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
+    <script>
+      const bulan = {
+        "01": "Januari",
+        "02": "Februari",
+        "03": "Maret",
+        "04": "April",
+        "05": "Mei",
+        "06": "Juni",
+        "07": "Juli",
+        "08": "Agustus",
+        "09": "September",
+        10: "Oktober",
+        11: "November",
+        12: "Desember",
+      };
+      // Fetch data kelulusan
+      function cekKelulusn() {
+        let nisn = document.querySelector("#nisn").value;
+        const api_url = "https://alumni.sman1rawamerta.sch.id/api/kelulusan/" + nisn;
+        fetch(api_url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then(function (response) {
+            if (response.status === 200) {
+              response.json().then(function (data) {
+                document.querySelector(".hasil-pengumuman").classList.add("show");
+                document.querySelector("strong.nama-siswa1").innerHTML = data.biodata.nama;
+                document.querySelector("strong.nama-siswa2").innerHTML = data.biodata.nama;
+                document.querySelector(".nama").innerHTML = data.biodata.nama;
+                document.querySelector(".tempat_lahir").innerHTML = data.biodata.tempat_lahir;
+
+                // Convert Tanggal lahir
+                let hari = String(data.biodata.tanggal_lahir).substr(8, 2);
+                let bulanLahir = String(data.biodata.tanggal_lahir).substr(5, 2);
+                let keys = Object.keys(bulan);
+                for (let i = 0; i < keys.length; i++) {
+                  if (bulanLahir === keys[i]) {
+                    bulanLahir = bulan[keys[i]];
+                  }
+                }
+                let tahun = String(data.biodata.tanggal_lahir).substr(0, 4);
+                document.querySelector(".tanggal_lahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
+                document.querySelector(".nis").innerHTML = data.biodata.nis;
+                document.querySelector(".nisn").innerHTML = data.biodata.nisn;
+                document.querySelector(".jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
+              });
+            } else {
+              alert("Data tidak ditemukan");
+            }
+          })
+          .catch(function (error) {
+            alert("Error: " + error);
+          });
+      }
+
+      // Download PDF
+      // Suket Lulus
+      document.querySelector(".skl").addEventListener("click", () => {
+        const element = document.getElementById("kelulusan");
+        document.documentElement.scrollTop = 0;
+        const option = {
+          filename: "pengumuman-kelulusan.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+          jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+        };
+        html2pdf().set(option).from(element).save();
+      });
+
+      // Suket Ijazah
+      document.querySelector(".suket-ijazah").addEventListener("click", () => {
+        const element = document.getElementById("suket-ijazah");
+        document.documentElement.scrollTop = 0;
+        const option = {
+          filename: "surat-keterangan-ijazah.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+          jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+        };
+        html2pdf().set(option).from(element).save();
+      });
+
+      // Transkrip Nilai
+      document.querySelector(".transkrip").addEventListener("click", () => {
+        const element = document.getElementById("transkrip-nilai");
+        document.documentElement.scrollTop = 0;
+        const option = {
+          filename: "surat-keterangan-lulus.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+          jsPDF: { unit: "mm", format: [330, 215.9], orientation: "portrait" },
+        };
+        html2pdf().set(option).from(element).save();
+      });
+
+      // SKKB
+      document.querySelector(".skkb").addEventListener("click", () => {
+        const element = document.getElementById("skkb");
+        document.documentElement.scrollTop = 0;
+        const option = {
+          filename: "surat-keterangan-kelakuan-baik.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+          jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+        };
+        html2pdf().set(option).from(element).save();
+      });
+    </script>
   </body>
 </html>
