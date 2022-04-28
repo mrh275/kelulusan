@@ -143,6 +143,14 @@
   .btn-primary {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-semibold;
   }
+
+  .content-section.pengumuman {
+    @apply lg:pt-4;
+  }
+
+  .content-section.pengumuman.fixed-nav {
+    @apply lg:pt-20;
+  }
   /* End Pengumuman Kelulusan */
   /* End Content Section */
 

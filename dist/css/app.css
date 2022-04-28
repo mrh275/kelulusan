@@ -923,6 +923,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
+@media (min-width: 1024px){
+  .content-section.pengumuman{
+    padding-top: 1rem;
+  }
+
+  .content-section.pengumuman.fixed-nav{
+    padding-top: 5rem;
+  }
+}
+
 /* End Pengumuman Kelulusan */
 
 /* End Content Section */
