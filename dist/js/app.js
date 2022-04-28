@@ -13,3 +13,21 @@ hMenu.addEventListener("click", function () {
 // Get current year footer
 const year = new Date().getFullYear();
 document.querySelector(".year").innerHTML = year;
+
+// Navbar Animation on Scroll
+let navbar = document.querySelector(".navbar");
+let offset = 0;
+window.addEventListener("scroll", function () {
+  let st = window.pageYOffset;
+  if (st > offset) {
+    navbar.classList.add("fixed-nav");
+    document.querySelector(".hero-wrapper").classList.add("fixed-nav");
+    document.querySelector(".scroll-top-btn").classList.add("bottom-0");
+    document.querySelector(".scroll-top-btn").classList.remove("-bottom-full");
+  } else {
+    navbar.classList.remove("fixed-nav");
+    document.querySelector(".hero-wrapper").classList.remove("fixed-nav");
+    document.querySelector(".scroll-top-btn").classList.remove("bottom-0");
+    document.querySelector(".scroll-top-btn").classList.add("-bottom-full");
+  }
+});
