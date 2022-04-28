@@ -21,13 +21,19 @@ window.addEventListener("scroll", function () {
   let st = window.pageYOffset;
   if (st > offset) {
     navbar.classList.add("fixed-nav");
-    document.querySelector(".hero-wrapper").classList.add("fixed-nav");
-    document.querySelector(".scroll-top-btn").classList.add("bottom-0");
-    document.querySelector(".scroll-top-btn").classList.remove("-bottom-full");
+    if (document.querySelector(".hero-wrapper")) {
+      document.querySelector(".hero-wrapper").classList.add("fixed-nav");
+    }
+    if (document.querySelector(".pengumuman")) {
+      document.querySelector(".pengumuman").classList.add("fixed-nav");
+    }
   } else {
     navbar.classList.remove("fixed-nav");
-    document.querySelector(".hero-wrapper").classList.remove("fixed-nav");
-    document.querySelector(".scroll-top-btn").classList.remove("bottom-0");
-    document.querySelector(".scroll-top-btn").classList.add("-bottom-full");
+    if (document.querySelector(".hero-wrapper")) {
+      document.querySelector(".hero-wrapper").classList.remove("fixed-nav");
+    }
+    if (document.querySelector(".pengumuman")) {
+      document.querySelector(".pengumuman").classList.remove("fixed-nav");
+    }
   }
 });
