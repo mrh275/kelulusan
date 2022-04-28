@@ -756,6 +756,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .card-sm{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 100%;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -766,6 +768,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .card-body{
+  flex-wrap: wrap;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1.5rem;
@@ -777,6 +780,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: flex;
   }
 }
+
+/* Sambutan */
 
 .img-wrapper{
   margin-bottom: 1.5rem;
@@ -857,6 +862,68 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1.5rem;
   }
 }
+
+/* End Sambutan */
+
+/* Pengumuman Kelulusan */
+
+.pengumuman-title{
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (min-width: 768px){
+  .pengumuman-title{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .pengumuman-title{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.pengumuman-desc{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.btn{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.btn-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn-primary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
+/* End Pengumuman Kelulusan */
 
 /* End Content Section */
 

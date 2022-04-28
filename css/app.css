@@ -89,13 +89,14 @@
     @apply bg-gray-200 px-8 py-8;
   }
   .card-sm {
-    @apply w-full bg-gray-50 rounded-lg shadow-lg;
+    @apply w-full bg-gray-50 rounded-lg shadow-lg my-8;
   }
 
   .card-body {
-    @apply px-6 py-6 lg:flex;
+    @apply px-6 py-6 lg:flex flex-wrap;
   }
 
+  /* Sambutan */
   .img-wrapper {
     @apply flex justify-center w-auto items-center mb-6 lg:w-1/6;
   }
@@ -124,6 +125,25 @@
   .sambutan-desc {
     @apply pt-4 text-justify text-sm xl:text-base break-words;
   }
+  /* End Sambutan */
+
+  /* Pengumuman Kelulusan */
+  .pengumuman-title {
+    @apply text-center font-semibold md:text-lg lg:text-xl w-full;
+  }
+
+  .pengumuman-desc {
+    @apply w-full text-center my-4;
+  }
+
+  .btn {
+    @apply px-4 py-3 flex justify-center items-center rounded-lg transition-all duration-200 mx-auto;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-semibold;
+  }
+  /* End Pengumuman Kelulusan */
   /* End Content Section */
 
   /* Footer */
