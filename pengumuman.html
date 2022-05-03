@@ -68,7 +68,7 @@
               </div>
               <div class="form-group">
                 <label for="token">Token</label>
-                <input type="text" class="form-control" name="token" />
+                <input type="text" class="form-control" id="token" name="token" />
               </div>
               <div class="form-group">
                 <button class="btn-sm btn-primary" type="button" onclick="cekKelulusn()">Submit</button>
@@ -483,7 +483,7 @@
 
               <div class="ttd-wrapper w-full flex justify-between my-8 relative z-50">
                 <div class="pas-foto flex justify-end items-center w-1/2">
-                  <img src="./format/img/no-profile.png" alt="foto" class="w-[3cm] h-[4cm]" />
+                  <!-- <img src="./format/img/no-profile.png" alt="foto" class="w-[3cm] h-[4cm]" /> -->
                 </div>
                 <div class="ttd relative">
                   <p>Rawamerta, 04 Mei 2022</p>
@@ -522,97 +522,109 @@
       function cekKelulusn() {
         let nisn = document.querySelector("#nisn").value;
         const api_url = "https://alumni.sman1rawamerta.sch.id/api/kelulusan/" + nisn;
-        fetch(api_url, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then(function (response) {
-            if (response.status === 200) {
-              response.json().then(function (data) {
-                document.querySelector(".hasil-pengumuman").classList.add("show");
-                document.querySelector("strong.nama-siswa1").innerHTML = data.biodata.nama;
-                document.querySelector("strong.nama-siswa2").innerHTML = data.biodata.nama;
-                document.querySelector(".nama").innerHTML = data.biodata.nama;
-                document.querySelector(".tempat_lahir").innerHTML = data.biodata.tempat_lahir;
+        let angkatan = document.querySelector("#angkatan").value;
+        let token = document.querySelector("#token").value;
+        console.log(token);
+        if (token == "h64xjv1b") {
+          if (angkatan == "2022") {
+            fetch(api_url, {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then(function (response) {
+                if (response.status === 200) {
+                  response.json().then(function (data) {
+                    document.querySelector(".hasil-pengumuman").classList.add("show");
+                    document.querySelector("strong.nama-siswa1").innerHTML = data.biodata.nama;
+                    document.querySelector("strong.nama-siswa2").innerHTML = data.biodata.nama;
+                    document.querySelector(".nama").innerHTML = data.biodata.nama;
+                    document.querySelector(".tempat_lahir").innerHTML = data.biodata.tempat_lahir;
 
-                // Convert Tanggal lahir
-                let hari = String(data.biodata.tanggal_lahir).substr(8, 2);
-                let bulanLahir = String(data.biodata.tanggal_lahir).substr(5, 2);
-                let keys = Object.keys(bulan);
-                for (let i = 0; i < keys.length; i++) {
-                  if (bulanLahir === keys[i]) {
-                    bulanLahir = bulan[keys[i]];
-                  }
-                }
-                let tahun = String(data.biodata.tanggal_lahir).substr(0, 4);
-                let kelasRaw = data.biodata.kelas.substr(3, 3);
-                document.querySelector(".tanggal_lahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
-                document.querySelector(".nis").innerHTML = data.biodata.nis;
-                document.querySelector(".nisn").innerHTML = data.biodata.nisn;
-                document.querySelector(".jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
+                    // Convert Tanggal lahir
+                    let hari = String(data.biodata.tanggal_lahir).substr(8, 2);
+                    let bulanLahir = String(data.biodata.tanggal_lahir).substr(5, 2);
+                    let keys = Object.keys(bulan);
+                    for (let i = 0; i < keys.length; i++) {
+                      if (bulanLahir === keys[i]) {
+                        bulanLahir = bulan[keys[i]];
+                      }
+                    }
+                    let tahun = String(data.biodata.tanggal_lahir).substr(0, 4);
+                    let kelasRaw = data.biodata.kelas.substr(3, 3);
+                    document.querySelector(".tanggal_lahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
+                    document.querySelector(".nis").innerHTML = data.biodata.nis;
+                    document.querySelector(".nisn").innerHTML = data.biodata.nisn;
+                    document.querySelector(".jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
 
-                // SKL
-                document.querySelector(".transkrip-nama").innerHTML = data.biodata.nama;
-                document.querySelector(".transkrip-tempatLahir").innerHTML = data.biodata.tempat_lahir;
-                document.querySelector(".transkrip-tanggalLahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
-                document.querySelector(".transkrip-namaOrangTua").innerHTML = data.dataOrangTua.nama_ayah;
-                document.querySelector(".transkrip-nis").innerHTML = data.biodata.nis;
-                document.querySelector(".transkrip-nisn").innerHTML = data.biodata.nisn;
-                document.querySelector(".transkrip-jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
-                document.querySelector(".nilai-pai").innerHTML = data.nilai_ijazah.pai;
-                document.querySelector(".nilai-pkn").innerHTML = data.nilai_ijazah.ppkn;
-                document.querySelector(".nilai-indo").innerHTML = data.nilai_ijazah.indonesia;
-                document.querySelector(".nilai-mtk-wajib").innerHTML = data.nilai_ijazah.mtk_wajib;
-                document.querySelector(".nilai-sejarah-indo").innerHTML = data.nilai_ijazah.sejarah_indo;
-                document.querySelector(".nilai-inggris").innerHTML = data.nilai_ijazah.inggris;
-                document.querySelector(".nilai-sbk").innerHTML = data.nilai_ijazah.sbk;
-                document.querySelector(".nilai-pjok").innerHTML = data.nilai_ijazah.pjok;
-                document.querySelector(".nilai-pkwu").innerHTML = data.nilai_ijazah.pkwu;
-                document.querySelector(".nilai-sunda").innerHTML = data.nilai_ijazah.sunda;
-                if (kelasRaw == "ipa") {
-                  document.querySelector(".mapel-minat1").innerHTML = "Matematika";
-                  document.querySelector(".mapel-minat2").innerHTML = "Biologi";
-                  document.querySelector(".mapel-minat3").innerHTML = "Fisika";
-                  document.querySelector(".mapel-minat4").innerHTML = "Kimia";
-                  document.querySelector(".mapel-minat5").innerHTML = "Ekonomi";
-                  document.querySelector(".nilai-minat1").innerHTML = data.nilai_ijazah.mtk_minat;
-                  document.querySelector(".nilai-minat2").innerHTML = data.nilai_ijazah.biologi;
-                  document.querySelector(".nilai-minat3").innerHTML = data.nilai_ijazah.fisika;
-                  document.querySelector(".nilai-minat4").innerHTML = data.nilai_ijazah.kimia;
-                  document.querySelector(".nilai-minat5").innerHTML = data.nilai_ijazah.ekonomi;
+                    // SKL
+                    document.querySelector(".transkrip-nama").innerHTML = data.biodata.nama;
+                    document.querySelector(".transkrip-tempatLahir").innerHTML = data.biodata.tempat_lahir;
+                    document.querySelector(".transkrip-tanggalLahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
+                    document.querySelector(".transkrip-namaOrangTua").innerHTML = data.dataOrangTua.nama_ayah;
+                    document.querySelector(".transkrip-nis").innerHTML = data.biodata.nis;
+                    document.querySelector(".transkrip-nisn").innerHTML = data.biodata.nisn;
+                    document.querySelector(".transkrip-jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
+                    document.querySelector(".nilai-pai").innerHTML = data.nilai_ijazah.pai;
+                    document.querySelector(".nilai-pkn").innerHTML = data.nilai_ijazah.ppkn;
+                    document.querySelector(".nilai-indo").innerHTML = data.nilai_ijazah.indonesia;
+                    document.querySelector(".nilai-mtk-wajib").innerHTML = data.nilai_ijazah.mtk_wajib;
+                    document.querySelector(".nilai-sejarah-indo").innerHTML = data.nilai_ijazah.sejarah_indo;
+                    document.querySelector(".nilai-inggris").innerHTML = data.nilai_ijazah.inggris;
+                    document.querySelector(".nilai-sbk").innerHTML = data.nilai_ijazah.sbk;
+                    document.querySelector(".nilai-pjok").innerHTML = data.nilai_ijazah.pjok;
+                    document.querySelector(".nilai-pkwu").innerHTML = data.nilai_ijazah.pkwu;
+                    document.querySelector(".nilai-sunda").innerHTML = data.nilai_ijazah.sunda;
+                    if (kelasRaw == "ipa") {
+                      document.querySelector(".mapel-minat1").innerHTML = "Matematika";
+                      document.querySelector(".mapel-minat2").innerHTML = "Biologi";
+                      document.querySelector(".mapel-minat3").innerHTML = "Fisika";
+                      document.querySelector(".mapel-minat4").innerHTML = "Kimia";
+                      document.querySelector(".mapel-minat5").innerHTML = "Ekonomi";
+                      document.querySelector(".nilai-minat1").innerHTML = data.nilai_ijazah.mtk_minat;
+                      document.querySelector(".nilai-minat2").innerHTML = data.nilai_ijazah.biologi;
+                      document.querySelector(".nilai-minat3").innerHTML = data.nilai_ijazah.fisika;
+                      document.querySelector(".nilai-minat4").innerHTML = data.nilai_ijazah.kimia;
+                      document.querySelector(".nilai-minat5").innerHTML = data.nilai_ijazah.ekonomi;
+                    } else {
+                      document.querySelector(".mapel-minat1").innerHTML = "Sejarah";
+                      document.querySelector(".mapel-minat2").innerHTML = "Ekonomi";
+                      document.querySelector(".mapel-minat3").innerHTML = "Sosiologi";
+                      document.querySelector(".mapel-minat4").innerHTML = "Geografi";
+                      document.querySelector(".mapel-minat5").innerHTML = "Biologi";
+                      document.querySelector(".nilai-minat1").innerHTML = data.nilai_ijazah.sejarah_minat;
+                      document.querySelector(".nilai-minat2").innerHTML = data.nilai_ijazah.ekonomi;
+                      document.querySelector(".nilai-minat3").innerHTML = data.nilai_ijazah.sosiologi;
+                      document.querySelector(".nilai-minat4").innerHTML = data.nilai_ijazah.geografi;
+                      document.querySelector(".nilai-minat5").innerHTML = data.nilai_ijazah.biologi;
+                    }
+                    document.querySelector(".nilai-rata").innerHTML = data.nilai_ijazah.rata_rata;
+
+                    // SKKB
+                    document.querySelector(".skkb-nama").innerHTML = data.biodata.nama;
+                    document.querySelector(".skkb-nis").innerHTML = data.biodata.nis;
+                    document.querySelector(".skkb-nisn").innerHTML = data.biodata.nisn;
+                    document.querySelector(".skkb-tempatLahir").innerHTML = data.biodata.tempat_lahir;
+                    document.querySelector(".skkb-tanggalLahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
+                    document.querySelector(".skkb-jenisKelamin").innerHTML = data.biodata.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan";
+                    let kelas = data.biodata.kelas.substr(0, 2) + " " + data.biodata.kelas.substr(3, 3).toUpperCase() + " " + data.biodata.kelas.substr(7, 1);
+                    document.querySelector(".skkb-kelas").innerHTML = kelas;
+                  });
                 } else {
-                  document.querySelector(".mapel-minat1").innerHTML = "Sejarah";
-                  document.querySelector(".mapel-minat2").innerHTML = "Ekonomi";
-                  document.querySelector(".mapel-minat3").innerHTML = "Sosiologi";
-                  document.querySelector(".mapel-minat4").innerHTML = "Geografi";
-                  document.querySelector(".mapel-minat5").innerHTML = "Biologi";
-                  document.querySelector(".nilai-minat1").innerHTML = data.nilai_ijazah.sejarah_minat;
-                  document.querySelector(".nilai-minat2").innerHTML = data.nilai_ijazah.ekonomi;
-                  document.querySelector(".nilai-minat3").innerHTML = data.nilai_ijazah.sosiologi;
-                  document.querySelector(".nilai-minat4").innerHTML = data.nilai_ijazah.geografi;
-                  document.querySelector(".nilai-minat5").innerHTML = data.nilai_ijazah.biologi;
+                  alert("Data tidak ditemukan");
                 }
-                document.querySelector(".nilai-rata").innerHTML = data.nilai_ijazah.rata_rata;
-
-                // SKKB
-                document.querySelector(".skkb-nama").innerHTML = data.biodata.nama;
-                document.querySelector(".skkb-nis").innerHTML = data.biodata.nis;
-                document.querySelector(".skkb-nisn").innerHTML = data.biodata.nisn;
-                document.querySelector(".skkb-tempatLahir").innerHTML = data.biodata.tempat_lahir;
-                document.querySelector(".skkb-tanggalLahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
-                document.querySelector(".skkb-jenisKelamin").innerHTML = data.biodata.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan";
-                let kelas = data.biodata.kelas.substr(0, 2) + " " + data.biodata.kelas.substr(3, 3).toUpperCase() + " " + data.biodata.kelas.substr(7, 1);
-                document.querySelector(".skkb-kelas").innerHTML = kelas;
+              })
+              .catch(function (error) {
+                alert("Error: " + error);
               });
-            } else {
-              alert("Data tidak ditemukan");
-            }
-          })
-          .catch(function (error) {
-            alert("Error: " + error);
-          });
+            return;
+          } else {
+            alert("Data tidak ditemukan");
+          }
+        } else {
+          alert("Token tidak valid!");
+        }
       }
 
       // Download PDF
