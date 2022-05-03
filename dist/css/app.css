@@ -522,10 +522,37 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.brand{
+  display: flex;
+  align-items: center;
+}
+
+.brand img{
+  margin-right: 0.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+@media (min-width: 1024px){
+  .brand img{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
 .brand-item{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 600;
+}
+
+@media (min-width: 1024px){
+  .brand-item{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .nav-menu{
