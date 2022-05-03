@@ -43,7 +43,7 @@
             <p class="lulus-desc">Ananda <strong class="nama-siswa2"></strong> telah menyelesaikan Pendidikan selama 3 tahun di <strong>SMA Negeri 1 Rawamerta</strong>. Dan dinyatakan telah <strong>Lulus</strong> dari SMA Negeri 1 Rawamerta.</p>
             <p class="lulus-desc">Untuk mengunduh <strong>Dokumen Keterangan Lulus</strong>, silahkan klik tombol dibawah ini.</p>
             <div class="lulus-btn">
-              <!-- <button class="btn-sm btn-success skl">Suket Lulus</button> -->
+              <button class="btn-sm btn-success skl" onclick="exportSuketLulus()">Suket Lulus</button>
               <button class="btn-sm btn-success transkrip" onclick="exportTranskrip()">Surat Keterangan Lulus</button>
               <!-- <button class="btn-sm btn-success suket-ijazah">Suket Ijazah</button> -->
               <button class="btn-sm btn-success skkb" onclick="exportSKKB()">SKKB</button>
@@ -141,23 +141,23 @@
               <p>menerangkan bahwa :</p>
               <div class="data my-4 mx-8">
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Nama</div>
+                  <div class="data-label w-5/12">Nama</div>
                   <div class="data-value">: <span class="font-bold nama"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Tempat, tanggal lahir</div>
+                  <div class="data-label w-5/12">Tempat, tanggal lahir</div>
                   <div class="data-value">: <span class="tempat_lahir"></span>, <span class="tanggal_lahir"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">NIS / NISN</div>
+                  <div class="data-label w-5/12">NIS / NISN</div>
                   <div class="data-value">: <span class="nis"></span> / <span class="nisn"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Peminatan</div>
+                  <div class="data-label w-5/12">Peminatan</div>
                   <div class="data-value">: <span class="jurusan"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Dinyatakan</div>
+                  <div class="data-label w-5/12">Dinyatakan</div>
                   <div class="data-value">: <span class="font-bold text-xl">LULUS</span></div>
                 </div>
               </div>
@@ -165,7 +165,7 @@
 
               <div class="ttd-wrapper w-full flex justify-end my-8 relative z-50">
                 <div class="ttd relative">
-                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p>Rawamerta, 04 Mei 2022</p>
                   <p class="mb-20">Kepala Sekolah,</p>
                   <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
                   <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 top-0" />
@@ -629,17 +629,17 @@
 
       // Download PDF
       // Suket Lulus
-      // document.querySelector(".skl").addEventListener("click", () => {
-      //   const element = document.getElementById("kelulusan");
-      //   document.documentElement.scrollTop = 0;
-      //   const option = {
-      //     filename: "pengumuman-kelulusan.pdf",
-      //     image: { type: "jpeg", quality: 0.98 },
-      //     html2canvas: { scale: 2, dpi: 200, letterRendering: true },
-      //     jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
-      //   };
-      //   html2pdf().set(option).from(element).save();
-      // });
+      function exportSuketLulus() {
+        const element = document.getElementById("kelulusan");
+        document.documentElement.scrollTop = 0;
+        const option = {
+          filename: "pengumuman-kelulusan.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+          jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+        };
+        html2pdf().set(option).from(element).save();
+      }
 
       // // Suket Ijazah
       // document.querySelector(".suket-ijazah").addEventListener("click", () => {
