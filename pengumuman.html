@@ -43,10 +43,10 @@
             <p class="lulus-desc">Ananda <strong class="nama-siswa2"></strong> telah menyelesaikan Pendidikan selama 3 tahun di <strong>SMA Negeri 1 Rawamerta</strong>. Dan dinyatakan telah <strong>Lulus</strong> dari SMA Negeri 1 Rawamerta.</p>
             <p class="lulus-desc">Untuk mengunduh <strong>Dokumen Keterangan Lulus</strong>, silahkan klik tombol dibawah ini.</p>
             <div class="lulus-btn">
-              <button class="btn-sm btn-success skl">Suket Lulus</button>
-              <button class="btn-sm btn-success transkrip">Transkrip Nilai</button>
-              <button class="btn-sm btn-success suket-ijazah">Suket Ijazah</button>
-              <button class="btn-sm btn-success skkb">SKKB</button>
+              <!-- <button class="btn-sm btn-success skl">Suket Lulus</button> -->
+              <button class="btn-sm btn-success transkrip" onclick="exportTranskrip()">Surat Keterangan Lulus</button>
+              <!-- <button class="btn-sm btn-success suket-ijazah">Suket Ijazah</button> -->
+              <button class="btn-sm btn-success skkb" onclick="exportSKKB()">SKKB</button>
             </div>
           </div>
         </div>
@@ -279,7 +279,7 @@
               <ol class="list-decimal ml-4 m-2">
                 <li class="text-justify">Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013;</li>
                 <li class="text-justify">Kriteria kelulusan dari satuan pendidikan sesuai dengan Kurikulum Tingkat Satuan Pendidikan dan peraturan perundang-undangan serta;</li>
-                <li class="text-justify">Rapat Pleno Dewan Guru tentang Kelulusan pada tanggal 28 April 2022;</li>
+                <li class="text-justify">Rapat Pleno Dewan Guru tentang Kelulusan pada tanggal 04 Mei 2022;</li>
               </ol>
               <p class="my-2">menerangkan bahwa :</p>
               <div class="data my-2 mx-5 text-[14px]">
@@ -331,32 +331,32 @@
                 <tr>
                   <td class="number-list">1.</td>
                   <td class="mapel">Pendidikan Agama dan Budi Pekerti</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-pai"></td>
                 </tr>
                 <tr>
                   <td class="number-list">2.</td>
                   <td class="mapel">Pendidikan Pancasila dan Kewarganegaraan</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-pkn"></td>
                 </tr>
                 <tr>
                   <td class="number-list">3.</td>
                   <td class="mapel">Bahasa Indonesia</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-indo"></td>
                 </tr>
                 <tr>
                   <td class="number-list">4.</td>
                   <td class="mapel">Matematika</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-mtk-wajib"></td>
                 </tr>
                 <tr>
                   <td class="number-list">5.</td>
                   <td class="mapel">Sejarah Indonesia</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-sejarah-indo"></td>
                 </tr>
                 <tr>
                   <td class="number-list">6.</td>
                   <td class="mapel">Bahasa Inggris</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-inggris"></td>
                 </tr>
                 <tr>
                   <td colspan="3" class="kelompok-mapel">Kelompok B / Muatan Kewilayahan</td>
@@ -364,60 +364,60 @@
                 <tr>
                   <td class="number-list">1.</td>
                   <td class="mapel">Seni Budaya</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-sbk"></td>
                 </tr>
                 <tr>
                   <td class="number-list">2.</td>
                   <td class="mapel">Pendidikan Jasmani, Olahraga dan Kesehatan</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-pjok"></td>
                 </tr>
                 <tr>
                   <td class="number-list">3.</td>
                   <td class="mapel">Prakarya dan Kewirausahaan</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-pkwu"></td>
                 </tr>
                 <tr>
                   <td class="number-list">4.</td>
                   <td class="mapel">Bahasa Sunda</td>
-                  <td class="nilai">83,25</td>
+                  <td class="text-center nilai-sunda"></td>
                 </tr>
                 <tr>
                   <td colspan="3" class="kelompok-mapel">Kelompok C / Muatan Peminatan Kejuaran</td>
                 </tr>
                 <tr>
                   <td class="number-list">1.</td>
-                  <td class="mapel">Matematika</td>
-                  <td class="nilai">83,25</td>
+                  <td class="mapel-minat1"></td>
+                  <td class="text-center nilai-minat1"></td>
                 </tr>
                 <tr>
                   <td class="number-list">2.</td>
-                  <td class="mapel">Biologi</td>
-                  <td class="nilai">83,25</td>
+                  <td class="mapel-minat2"></td>
+                  <td class="text-center nilai-minat2"></td>
                 </tr>
                 <tr>
                   <td class="number-list">3.</td>
-                  <td class="mapel">Fisima</td>
-                  <td class="nilai">83,25</td>
+                  <td class="mapel-minat3"></td>
+                  <td class="text-center nilai-minat3"></td>
                 </tr>
                 <tr>
                   <td class="number-list">4.</td>
-                  <td class="mapel">Kimia</td>
-                  <td class="nilai">83,25</td>
+                  <td class="mapel-minat4"></td>
+                  <td class="text-center nilai-minat4"></td>
                 </tr>
                 <tr>
                   <td class="number-list">5.</td>
-                  <td class="mapel">Ekonomi</td>
-                  <td class="nilai">83,25</td>
+                  <td class="mapel-minat5"></td>
+                  <td class="text-center nilai-minat5"></td>
                 </tr>
                 <tr>
-                  <td colspan="2" class="text-center">Rata-rata</td>
-                  <td class="font-bold text-center">83.80</td>
+                  <td colspan="2" class="text-center font-semibold">Rata-rata</td>
+                  <td class="font-bold text-center nilai-rata"></td>
                 </tr>
               </table>
 
               <div class="ttd-wrapper w-full flex justify-end my-2 relative z-50">
                 <div class="ttd relative">
-                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p>Rawamerta, 04 Mei 2022</p>
                   <p class="mb-[70px]">Kepala Sekolah,</p>
                   <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
                   <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 -top-3" />
@@ -457,31 +457,23 @@
               <p class="text-justify">Yang bertanda tangan di bawah ini, Kepala Sekolah Menengah Atas (SMA) Negeri 1 Rawamerta Kab. Karawang, menerangkan bahwa :</p>
               <div class="data my-4 mx-8">
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Nama</div>
-                  <div class="data-value">: <span class="font-bold skkb-nama">AISAH</span></div>
+                  <div class="data-label w-5/12">Nama</div>
+                  <div class="data-value">: <span class="font-bold skkb-nama"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">NIS / NISN</div>
+                  <div class="data-label w-5/12">NIS / NISN</div>
                   <div class="data-value">: <span class="skkb-nis"></span> / <span class="skkb-nisn"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Tempat, tanggal lahir</div>
+                  <div class="data-label w-5/12">Tempat, tanggal lahir</div>
                   <div class="data-value">: <span class="skkb-tempatLahir"></span>, <span class="skkb-tanggalLahir"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Jenis Kelamin</div>
+                  <div class="data-label w-5/12">Jenis Kelamin</div>
                   <div class="data-value">: <span class="skkb-jenisKelamin"></span></div>
                 </div>
                 <div class="data-group flex">
-                  <div class="data-label w-2/6">Agama</div>
-                  <div class="data-value">: <span class="skkb-agama"></span></div>
-                </div>
-                <div class="data-group flex">
-                  <div class="data-label w-2/6">No. Peserta Ujian</div>
-                  <div class="data-value">: <span class="skkb-nopes"></span></div>
-                </div>
-                <div class="data-group flex">
-                  <div class="data-label w-2/6">Kelas</div>
+                  <div class="data-label w-5/12">Kelas</div>
                   <div class="data-value">: <span class="skkb-kelas"></span></div>
                 </div>
               </div>
@@ -494,7 +486,7 @@
                   <img src="./format/img/no-profile.png" alt="foto" class="w-[3cm] h-[4cm]" />
                 </div>
                 <div class="ttd relative">
-                  <p>Rawamerta, 05 Mei 2022</p>
+                  <p>Rawamerta, 04 Mei 2022</p>
                   <p class="mb-20">Kepala Sekolah,</p>
                   <img src="./format/img/ttd.png" alt="ttd" class="w-[1.5cm] absolute left-8 top-8" />
                   <img src="./format/img/stempel.png" alt="stempel" class="w-[5cm] absolute -left-10 top-0" />
@@ -555,10 +547,64 @@
                   }
                 }
                 let tahun = String(data.biodata.tanggal_lahir).substr(0, 4);
+                let kelasRaw = data.biodata.kelas.substr(3, 3);
                 document.querySelector(".tanggal_lahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
                 document.querySelector(".nis").innerHTML = data.biodata.nis;
                 document.querySelector(".nisn").innerHTML = data.biodata.nisn;
                 document.querySelector(".jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
+
+                // SKL
+                document.querySelector(".transkrip-nama").innerHTML = data.biodata.nama;
+                document.querySelector(".transkrip-tempatLahir").innerHTML = data.biodata.tempat_lahir;
+                document.querySelector(".transkrip-tanggalLahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
+                document.querySelector(".transkrip-namaOrangTua").innerHTML = data.dataOrangTua.nama_ayah;
+                document.querySelector(".transkrip-nis").innerHTML = data.biodata.nis;
+                document.querySelector(".transkrip-nisn").innerHTML = data.biodata.nisn;
+                document.querySelector(".transkrip-jurusan").innerHTML = data.biodata.kelas.substr(3, 3).toUpperCase();
+                document.querySelector(".nilai-pai").innerHTML = data.nilai_ijazah.pai;
+                document.querySelector(".nilai-pkn").innerHTML = data.nilai_ijazah.ppkn;
+                document.querySelector(".nilai-indo").innerHTML = data.nilai_ijazah.indonesia;
+                document.querySelector(".nilai-mtk-wajib").innerHTML = data.nilai_ijazah.mtk_wajib;
+                document.querySelector(".nilai-sejarah-indo").innerHTML = data.nilai_ijazah.sejarah_indo;
+                document.querySelector(".nilai-inggris").innerHTML = data.nilai_ijazah.inggris;
+                document.querySelector(".nilai-sbk").innerHTML = data.nilai_ijazah.sbk;
+                document.querySelector(".nilai-pjok").innerHTML = data.nilai_ijazah.pjok;
+                document.querySelector(".nilai-pkwu").innerHTML = data.nilai_ijazah.pkwu;
+                document.querySelector(".nilai-sunda").innerHTML = data.nilai_ijazah.sunda;
+                if (kelasRaw == "ipa") {
+                  document.querySelector(".mapel-minat1").innerHTML = "Matematika";
+                  document.querySelector(".mapel-minat2").innerHTML = "Biologi";
+                  document.querySelector(".mapel-minat3").innerHTML = "Fisika";
+                  document.querySelector(".mapel-minat4").innerHTML = "Kimia";
+                  document.querySelector(".mapel-minat5").innerHTML = "Ekonomi";
+                  document.querySelector(".nilai-minat1").innerHTML = data.nilai_ijazah.mtk_minat;
+                  document.querySelector(".nilai-minat2").innerHTML = data.nilai_ijazah.biologi;
+                  document.querySelector(".nilai-minat3").innerHTML = data.nilai_ijazah.fisika;
+                  document.querySelector(".nilai-minat4").innerHTML = data.nilai_ijazah.kimia;
+                  document.querySelector(".nilai-minat5").innerHTML = data.nilai_ijazah.ekonomi;
+                } else {
+                  document.querySelector(".mapel-minat1").innerHTML = "Sejarah";
+                  document.querySelector(".mapel-minat2").innerHTML = "Ekonomi";
+                  document.querySelector(".mapel-minat3").innerHTML = "Sosiologi";
+                  document.querySelector(".mapel-minat4").innerHTML = "Geografi";
+                  document.querySelector(".mapel-minat5").innerHTML = "Biologi";
+                  document.querySelector(".nilai-minat1").innerHTML = data.nilai_ijazah.sejarah_minat;
+                  document.querySelector(".nilai-minat2").innerHTML = data.nilai_ijazah.ekonomi;
+                  document.querySelector(".nilai-minat3").innerHTML = data.nilai_ijazah.sosiologi;
+                  document.querySelector(".nilai-minat4").innerHTML = data.nilai_ijazah.geografi;
+                  document.querySelector(".nilai-minat5").innerHTML = data.nilai_ijazah.biologi;
+                }
+                document.querySelector(".nilai-rata").innerHTML = data.nilai_ijazah.rata_rata;
+
+                // SKKB
+                document.querySelector(".skkb-nama").innerHTML = data.biodata.nama;
+                document.querySelector(".skkb-nis").innerHTML = data.biodata.nis;
+                document.querySelector(".skkb-nisn").innerHTML = data.biodata.nisn;
+                document.querySelector(".skkb-tempatLahir").innerHTML = data.biodata.tempat_lahir;
+                document.querySelector(".skkb-tanggalLahir").innerHTML = hari + " " + bulanLahir + " " + tahun;
+                document.querySelector(".skkb-jenisKelamin").innerHTML = data.biodata.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan";
+                let kelas = data.biodata.kelas.substr(0, 2) + " " + data.biodata.kelas.substr(3, 3).toUpperCase() + " " + data.biodata.kelas.substr(7, 1);
+                document.querySelector(".skkb-kelas").innerHTML = kelas;
               });
             } else {
               alert("Data tidak ditemukan");
@@ -571,33 +617,33 @@
 
       // Download PDF
       // Suket Lulus
-      document.querySelector(".skl").addEventListener("click", () => {
-        const element = document.getElementById("kelulusan");
-        document.documentElement.scrollTop = 0;
-        const option = {
-          filename: "pengumuman-kelulusan.pdf",
-          image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
-          jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
-        };
-        html2pdf().set(option).from(element).save();
-      });
+      // document.querySelector(".skl").addEventListener("click", () => {
+      //   const element = document.getElementById("kelulusan");
+      //   document.documentElement.scrollTop = 0;
+      //   const option = {
+      //     filename: "pengumuman-kelulusan.pdf",
+      //     image: { type: "jpeg", quality: 0.98 },
+      //     html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+      //     jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+      //   };
+      //   html2pdf().set(option).from(element).save();
+      // });
 
-      // Suket Ijazah
-      document.querySelector(".suket-ijazah").addEventListener("click", () => {
-        const element = document.getElementById("suket-ijazah");
-        document.documentElement.scrollTop = 0;
-        const option = {
-          filename: "surat-keterangan-ijazah.pdf",
-          image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2, dpi: 200, letterRendering: true },
-          jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
-        };
-        html2pdf().set(option).from(element).save();
-      });
+      // // Suket Ijazah
+      // document.querySelector(".suket-ijazah").addEventListener("click", () => {
+      //   const element = document.getElementById("suket-ijazah");
+      //   document.documentElement.scrollTop = 0;
+      //   const option = {
+      //     filename: "surat-keterangan-ijazah.pdf",
+      //     image: { type: "jpeg", quality: 0.98 },
+      //     html2canvas: { scale: 2, dpi: 200, letterRendering: true },
+      //     jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+      //   };
+      //   html2pdf().set(option).from(element).save();
+      // });
 
       // Transkrip Nilai
-      document.querySelector(".transkrip").addEventListener("click", () => {
+      function exportTranskrip() {
         const element = document.getElementById("transkrip-nilai");
         document.documentElement.scrollTop = 0;
         const option = {
@@ -607,10 +653,10 @@
           jsPDF: { unit: "mm", format: [330, 215.9], orientation: "portrait" },
         };
         html2pdf().set(option).from(element).save();
-      });
+      }
 
       // SKKB
-      document.querySelector(".skkb").addEventListener("click", () => {
+      function exportSKKB() {
         const element = document.getElementById("skkb");
         document.documentElement.scrollTop = 0;
         const option = {
@@ -620,7 +666,7 @@
           jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
         };
         html2pdf().set(option).from(element).save();
-      });
+      }
     </script>
   </body>
 </html>

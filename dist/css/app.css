@@ -1524,6 +1524,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 400;
 }
 
+.font-semibold{
+  font-weight: 600;
+}
+
 .italic{
   font-style: italic;
 }
