@@ -1257,6 +1257,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: -0.75rem;
 }
 
+.left-4{
+  left: 1rem;
+}
+
+.top-12{
+  top: 3rem;
+}
+
+.top-\[3\.2rem\]{
+  top: 3.2rem;
+}
+
+.left-2{
+  left: 0.5rem;
+}
+
+.top-10{
+  top: 2.5rem;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -1356,8 +1376,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-.w-2\/6{
-  width: 33.333333%;
+.w-5\/12{
+  width: 41.666667%;
 }
 
 .w-\[1\.5cm\]{
@@ -1368,16 +1388,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 5cm;
 }
 
+.w-2\/6{
+  width: 33.333333%;
+}
+
 .w-11\/12{
   width: 91.666667%;
 }
 
 .w-\[90px\]{
   width: 90px;
-}
-
-.w-5\/12{
-  width: 41.666667%;
 }
 
 .w-\[120px\]{
@@ -1390,6 +1410,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[3cm\]{
   width: 3cm;
+}
+
+.w-\[2cm\]{
+  width: 2cm;
 }
 
 .list-decimal{
