@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- Main Wrapper -->
-    <div class="main-wrapper">
+    <div class="main-wrapper hidden">
       <!-- Navbar -->
       <nav class="navbar">
         <div class="brand">
@@ -502,6 +502,33 @@
     <script src="./dist/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("May 11, 2022 07:00:00").getTime();
+
+      // Update the count down every 1 second
+      window.addEventListener("load", function (event) {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        // If the count down is over, write some text
+        if (distance < 0) {
+          Swal.fire({
+            title: "Sedang memuat laman...",
+            timer: 2000,
+            didOpen: function () {
+              Swal.showLoading();
+            },
+          }).then((dismiss) => {
+            document.querySelector(".main-wrapper").classList.remove("hidden");
+          });
+        } else {
+          window.location.href = "./";
+        }
+      });
+    </script>
     <script>
       const bulan = {
         "01": "Januari",
