@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maintenance | Portal Kelulusan SMAN 1 Rawamerta</title>
-    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="./dist/css/app.css" />
-  </head>
-  <body>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      // Set the date we're counting down to
-      var countDownDate = new Date("May 11, 2022 07:00:00").getTime();
 
-      // Update the count down every 1 second
-      window.addEventListener("load", function (event) {
-        // Get today's date and time
-        var now = new Date().getTime();
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance | Portal Kelulusan SMAN 1 Rawamerta</title>
+  <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="./dist/css/app.css" />
+</head>
 
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-        // If the count down is over, write some text
-        if (distance < 0) {
-          window.location.href = "./home.html";
-        } else {
-          Swal.fire({
-            title: "Sedang memuat laman...",
-            timer: 2000,
-            didOpen: function () {
-              Swal.showLoading();
-            },
-          }).then((dismiss) => {
-            document.querySelector(".main-wrapper").classList.remove("hidden");
-            document.querySelector(".main-wrapper").classList.add("flex");
-            let x = setInterval(function () {
-              // Get today's date and time
-              var now = new Date().getTime();
+<body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("May 5, 2025 14:00:00").getTime();
 
-              // Find the distance between now and the count down date
-              var distance = countDownDate - now;
+    // Update the count down every 1 second
+    window.addEventListener("load", function (event) {
+      // Get today's date and time
+      var now = new Date().getTime();
 
-              // Time calculations for days, hours, minutes and seconds
-              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+      // If the count down is over, write some text
+      if (distance < 0) {
+        window.location.href = "./home.html";
+      } else {
+        Swal.fire({
+          title: "Sedang memuat laman...",
+          timer: 2000,
+          didOpen: function () {
+            Swal.showLoading();
+          },
+        }).then((dismiss) => {
+          document.querySelector(".main-wrapper").classList.remove("hidden");
+          document.querySelector(".main-wrapper").classList.add("flex");
+          let x = setInterval(function () {
+            // Get today's date and time
+            var now = new Date().getTime();
 
-              // Output the result in an element with id="demo"
-              document.getElementById("countdown").innerHTML = days + "h " + hours + "j " + minutes + "m " + seconds + "d ";
-            }, 1000);
-          });
-        }
-      });
-    </script>
-    <div class="main-wrapper hidden w-full h-screen justify-center items-center bg-gray-200 transition-all duration-200 ease-in-out">
-      <div class="countdown-wrapper w-3/4 bg-white rounded-lg shadow-lg px-8 py-6">
-        <div class="countdown-header">
-          <img src="./assets/img/logo.png" alt="Logo Sekolah" class="block mx-auto" />
-          <h1 class="countdown-brand text-center text-xl lg:text-3xl font-semibold text-zinc-700 my-2">SMA Negeri 1 Rawamerta</h1>
-          <h1 class="countdown-title font-semibold text-xl lg:text-4xl text-zinc-700 text-center mt-4 lg:mt-6">
-            Pengumuman Kelulusan <br />
-            Angkatan 9 <br />
-            Tahun Pelajaran 2021/2022
-          </h1>
-        </div>
-        <div class="countdown-body flex flex-col items-center justify-center my-6">
-          <h4 class="hitung-mundur text-2xl lg:text-5xl font-semibold text-zinc-700">Hitung Mundur</h4>
-          <div class="countdown text-2xl lg:text-5xl font-semibold text-zinc-700 my-1 lg:my-4" id="countdown"></div>
-        </div>
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "h " + hours + "j " + minutes + "m " + seconds + "d ";
+          }, 1000);
+        });
+      }
+    });
+  </script>
+  <div class="items-center justify-center hidden w-full h-screen transition-all duration-200 ease-in-out bg-gray-200 main-wrapper">
+    <div class="w-3/4 px-8 py-6 bg-white rounded-lg shadow-lg countdown-wrapper">
+      <div class="countdown-header">
+        <img src="./assets/img/logo.png" alt="Logo Sekolah" class="block mx-auto" />
+        <h1 class="my-2 text-xl font-semibold text-center countdown-brand lg:text-3xl text-zinc-700">SMA Negeri 1 Rawamerta</h1>
+        <h1 class="mt-4 text-xl font-semibold text-center countdown-title lg:text-4xl text-zinc-700 lg:mt-6">
+          Pengumuman Kelulusan <br />
+          Angkatan 12 <br />
+          Tahun Pelajaran 2024/2025
+        </h1>
+      </div>
+      <div class="flex flex-col items-center justify-center my-6 countdown-body">
+        <h4 class="text-2xl font-semibold hitung-mundur lg:text-5xl text-zinc-700">Hitung Mundur</h4>
+        <div class="my-1 text-2xl font-semibold countdown lg:text-5xl text-zinc-700 lg:my-4" id="countdown"></div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
