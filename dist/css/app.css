@@ -1273,6 +1273,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: -0.75rem;
 }
 
+.left-3{
+  left: 0.75rem;
+}
+
+.left-0{
+  left: 0px;
+}
+
+.-left-6{
+  left: -1.5rem;
+}
+
+.top-\[2rem\]{
+  top: 2rem;
+}
+
+.-left-20{
+  left: -5rem;
+}
+
+.top-1{
+  top: 0.25rem;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -1432,6 +1456,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[5cm\]{
   width: 5cm;
+}
+
+.w-\[4cm\]{
+  width: 4cm;
+}
+
+.w-\[4\.5cm\]{
+  width: 4.5cm;
 }
 
 .list-decimal{
